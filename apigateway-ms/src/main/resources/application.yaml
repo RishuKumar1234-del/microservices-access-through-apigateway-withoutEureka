@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: car-ms1
+        uri: http://localhost:8081/
+        predicates:
+        - Path=/car/**
+      - id: engine-ms2
+        uri: http://localhost:8082/
+        predicates:
+        - Path=/engine/**
+server:
+  port: 9091
